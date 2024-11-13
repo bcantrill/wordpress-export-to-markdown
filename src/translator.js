@@ -91,6 +91,14 @@ function initTurndownService() {
 		}
 	});
 
+	// convert <tt> to an inline code block
+	turndownService.addRule('tt', {
+		filter: 'tt',
+		replacement: (content) => {
+			return '`' + content + '`';
+		}
+	});
+
 	return turndownService;
 }
 
